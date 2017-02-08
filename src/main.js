@@ -15,7 +15,6 @@ Vue.filter("uniformChat",function(value){
      return json.name;
 });
 
-
 const Bar = { template: '<div>bar</div>' }
 const Baz = { template: '<div>baz</div>' }
 

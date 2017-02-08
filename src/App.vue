@@ -22,14 +22,15 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
     <MessageBox></MessageBox>
-    <Popup></Popup>
+    <ActionSheet></ActionSheet>
+    <element></element>
   </div>
 </template>
 
 <script>
 import MessageBox from './component/MessageBox.vue'
 import ActionSheet from './component/Actionsheet.vue'
-import Popup from './component/popup.vue'
+import element from './component/eleui.vue'
 export default {
   name: 'app',
   data () {
@@ -37,7 +38,7 @@ export default {
       msg: 'Hello Vue!'
     }
   },
-  components: { MessageBox ,ActionSheet,Popup}
+  components: { MessageBox ,ActionSheet, element }
 }
 </script>
 
