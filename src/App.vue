@@ -2,23 +2,13 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <ul>
-      <li><router-link to="/foo">
-        /foo (renders /home/foo)
-      </router-link></li>
-      <li><router-link to="/home/bar-alias">
-        /home/bar-alias (renders /home/bar)
-      </router-link></li>
-      <li><router-link to="/baz">
-        /baz (renders /home/baz)</router-link>
-      </li>
-      <li><router-link to="/home/baz-alias">
-        /home/baz-alias (renders /home/baz)
-      </router-link></li>
-    </ul>
-    <router-view></router-view>
 
-    <ul>
+    <p>
+       <router-link to="/foo">Go to Foo</router-link>
+       <router-link to="/bar">Go to Bar</router-link>
+    </p>
+    <router-view></router-view>
+<!--     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
       <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
@@ -30,14 +20,16 @@
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-    <firstcomponent></firstcomponent>
+    </ul> -->
+    <MessageBox></MessageBox>
+    <Popup></Popup>
   </div>
 </template>
 
 <script>
-import firstcomponent from './component/firstcomponent.vue'
-
+import MessageBox from './component/MessageBox.vue'
+import ActionSheet from './component/Actionsheet.vue'
+import Popup from './component/popup.vue'
 export default {
   name: 'app',
   data () {
@@ -45,7 +37,7 @@ export default {
       msg: 'Hello Vue!'
     }
   },
-  components: { firstcomponent },
+  components: { MessageBox ,ActionSheet,Popup}
 }
 </script>
 

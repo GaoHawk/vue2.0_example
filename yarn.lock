@@ -315,6 +315,10 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-component@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-component/-/babel-plugin-component-0.9.0.tgz#f653146630b1bf7017faf4e9f890a4b420c1e728"
+
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-arrow-functions/-/babel-plugin-transform-es2015-arrow-functions-6.22.0.tgz#452692cb711d5f79dc7f85e440ce41b9f244d221"
