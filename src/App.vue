@@ -21,24 +21,26 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
-    <MessageBox></MessageBox>
-    <ActionSheet></ActionSheet>
-    <element></element>
+    <child initialCounter="Num"></child>
   </div>
 </template>
 
 <script>
-import MessageBox from './component/MessageBox.vue'
-import ActionSheet from './component/Actionsheet.vue'
-import element from './component/eleui.vue'
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!',
+      count:0,
+      parentMsg:'Message frome parent'
     }
   },
-  components: { MessageBox ,ActionSheet, element }
+  components: { },
+  methods: {
+     increment () {
+         this.count++
+     }
+  }
 }
 </script>
 

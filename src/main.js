@@ -4,8 +4,10 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import MintUI from 'mint-ui'
 import Foo from './component/foo.vue'
+import Vuex from 'vuex'
 
 Vue.use(MintUI)
+Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.filter("uniformChat",function(value){
@@ -27,6 +29,13 @@ const router = new VueRouter({
   routes
 })
 
+Vue.component('child',{
+   props:['initialCounter'],
+   template: '<span>{{ counter }} </span>',
+   data:function(){
+      return { counter:this.initialCounter}
+   }
+})
 
 new Vue({
   el: '#app',
