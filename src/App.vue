@@ -22,20 +22,29 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
     <child initialCounter="Num"></child>
+    <counter></counter>
   </div>
 </template>
 
 <script>
+const Counter ={
+   template:`<div>{{ count }} </div>`,
+   computed:{
+      count() {
+          return this.$store.state.count
+      }
+   }
+}
+
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Hello Vue!',
-      count:0,
       parentMsg:'Message frome parent'
     }
   },
-  components: { },
+  components: { Counter },
   methods: {
      increment () {
          this.count++

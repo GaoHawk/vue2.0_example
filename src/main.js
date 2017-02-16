@@ -33,12 +33,25 @@ Vue.component('child',{
    props:['initialCounter'],
    template: '<span>{{ counter }} </span>',
    data:function(){
-      return { counter:this.initialCounter}
+      return { counter: 0}
    }
 })
+const store = new Vuex.Store({
+     state:{
+        count:0
+     },
+     mutations: {
+        increment(state) {
+            state.count++
+        }
+     }
+})
+store.commit('increment')
+console.log(store.state.count)
 
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
