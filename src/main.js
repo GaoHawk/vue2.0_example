@@ -5,9 +5,12 @@ import VueResource from 'vue-resource'
 import MintUI from 'mint-ui'
 import Foo from './component/foo.vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+import store from './store/index.js'
+
 
 Vue.use(MintUI)
-Vue.use(Vuex)
+// Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.filter("uniformChat",function(value){
@@ -29,26 +32,15 @@ const router = new VueRouter({
   routes
 })
 
-Vue.component('button-counter', {
-   template:'<button v-on:click="increment">{{ counter }} </button>',
-   data:function() {
-      return {
-         counter: 0
-      }
-   },
-   methods: {
-      increment: function() {
-          this.counter += 1
-          this.$emit('increment')
-      }
-   }
-})
 
-
-
+console.log(store)
+store.commit('increment')
+console.log(store.state.count)
+console.log(store.getters.doneTodos)
 
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
