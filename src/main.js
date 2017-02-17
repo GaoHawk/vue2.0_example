@@ -29,29 +29,26 @@ const router = new VueRouter({
   routes
 })
 
-Vue.component('child',{
-   props:['initialCounter'],
-   template: '<span>{{ counter }} </span>',
-   data:function(){
-      return { counter: 0}
+Vue.component('button-counter', {
+   template:'<button v-on:click="increment">{{ counter }} </button>',
+   data:function() {
+      return {
+         counter: 0
+      }
+   },
+   methods: {
+      increment: function() {
+          this.counter += 1
+          this.$emit('increment')
+      }
    }
 })
-const store = new Vuex.Store({
-     state:{
-        count:0
-     },
-     mutations: {
-        increment(state) {
-            state.count++
-        }
-     }
-})
-store.commit('increment')
-console.log(store.state.count)
+
+
+
 
 new Vue({
   el: '#app',
   router,
-  store,
   render: h => h(App)
 })

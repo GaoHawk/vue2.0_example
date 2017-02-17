@@ -1,7 +1,7 @@
 ﻿<template>
   <div id="app">
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg.a }}</h1>
 
     <p>
        <router-link to="/foo">Go to Foo</router-link>
@@ -21,8 +21,12 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
-    <child initialCounter="Num"></child>
-    <counter></counter>
+
+
+       <p>{{ total }} </p>
+       <button-counter v-on:increment="incrementTotal"></button-counter>
+       <button-counter v-on:increment="incrementTotal"></button-counter>
+
   </div>
 </template>
 
@@ -36,19 +40,21 @@ const Counter ={
    }
 }
 
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello Vue!',
-      parentMsg:'Message frome parent'
+      msg: { a:'Hello Vue!' },
+      parentMsg:'Message frome parent',
+      total:0
     }
   },
   components: { Counter },
   methods: {
-     increment () {
-         this.count++
-     }
+    incrementTotal: function(){
+      this.total +=1;
+    }
   }
 }
 </script>
