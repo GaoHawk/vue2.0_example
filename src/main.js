@@ -33,10 +33,8 @@ const router = new VueRouter({
 })
 
 
-console.log(store)
-store.commit('increment')
-console.log(store.state.count)
-console.log(store.getters.doneTodos)
+
+
 
 new Vue({
   el: '#app',

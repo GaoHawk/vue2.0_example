@@ -29,8 +29,10 @@
 
 <script>
 import { mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 const Counter ={
-   template:`<div>{{ count }} </div>`,
+   template:`<div >{{ count }} </div>`,
+
    computed:{
       count() {
           return this.$store.state.count
